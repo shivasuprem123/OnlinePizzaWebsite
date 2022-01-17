@@ -1,0 +1,37 @@
+<nav class="navbar navbar-inverse ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand " href="/register" routerLinkActive="Active">PizzaHunt</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/sign-in"><span class="glyphicon glyphicon-log-in"></span> sign In</a></li>
+    </ul>
+    </div>
+</nav>
+<br><br>
+<br><br>
+<div class="container" >
+    
+    <div class="col-md-4">
+        <h2 ><strong>Register Here</strong></h2>
+<form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+    <div class="form-group ">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="username" placeholder="Enter email or UserName">
+        <label type="text-danger" *ngIf="service.formModel.get('username')?.touched &&  service.formModel.get('username')?.errors">This field is Mandatory</label>
+       <small id="emailHelp" class="form-text text-muted" ></small>
+    </div>
+    <div class="form-group ">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1"   formControlName="password" placeholder="Password">
+       <label type="text-danger" *ngIf="service.formModel.get('password')?.touched &&  service.formModel.get('password')?.errors">Both field's are Mandatory</label>                                                   
+    </div>
+    
+    <button type="submit" class="btn btn-primary"  >Register</button>
+    <p id="demo"></p>
+  </form>
+</div>
+</div>
+
+
